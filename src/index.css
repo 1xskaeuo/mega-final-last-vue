@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+html { scroll-behavior: smooth; }
+
+/* ===== КНОПКИ ===== */
+.btn-primary {
+  @apply bg-black text-white py-2.5 rounded-xl italic font-medium hover:bg-gray-800 transition-colors text-sm w-full text-center;
+}
+
+.btn-outline {
+  @apply border border-black text-black py-2.5 rounded-xl italic font-medium hover:bg-black hover:text-white transition-colors text-sm text-center;
+}
+
+.btn-white-outline {
+  @apply border border-white text-white py-2.5 rounded-xl italic font-medium hover:bg-white hover:text-black transition-colors text-sm;
+}
+
+/* ===== КАРТОЧКА ТОВАРА ===== */
+.product-card {
+  @apply bg-[#F5F5F7] rounded-2xl p-4 relative cursor-pointer;
+}
+
+.product-card-image {
+  @apply flex items-center justify-center mb-3 px-3 bg-white/40 rounded-xl;
+}
+
+.product-card-title {
+  @apply text-sm font-medium italic text-center line-clamp-2;
+}
+
+.product-card-price {
+  @apply text-center italic text-base;
+}
+
+.product-card-buy-btn {
+  @apply w-full bg-black text-white py-2.5 rounded-xl italic hover:bg-gray-800 transition-colors text-sm font-medium;
+}
+
+.product-card-fav-btn {
+  @apply absolute top-3 right-3 z-10 p-1.5 bg-white/80 rounded-full hover:bg-white transition;
+}
+
+/* ===== СЕКЦИИ ГЛАВНОЙ ===== */
+.hero-section {
+  @apply bg-[#252525] text-white overflow-hidden;
+}
+
+.bento-grid {
+  @apply grid gap-3 md:gap-4 w-full;
+}
+
+.bento-block {
+  @apply rounded-2xl relative overflow-hidden;
+}
+
+.category-card {
+  @apply bg-[#F5F5F7] rounded-2xl p-5 md:p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-200 transition-colors shrink-0;
+}
+
+/* ===== КОРЗИНА ===== */
+.cart-item {
+  @apply flex items-center gap-4 py-5;
+}
+
+.cart-item-image {
+  @apply w-20 h-20 md:w-28 md:h-28 bg-[#F5F5F7] rounded-xl flex items-center justify-center shrink-0 p-3;
+}
+
+.cart-quantity-control {
+  @apply flex items-center gap-3 bg-[#F5F5F7] rounded-xl px-3 py-2 shrink-0;
+}
+
+.order-summary {
+  @apply bg-white border border-gray-200 rounded-2xl p-6;
+}
+
+/* ===== ИЗБРАННОЕ ===== */
+.favorite-card {
+  @apply bg-[#F5F5F7] rounded-2xl p-6 relative;
+}
+
+/* ===== ФИЛЬТРЫ ===== */
+.filter-section {
+  @apply border-b border-gray-200 py-4;
+}
+
+.filter-checkbox {
+  @apply flex items-center gap-2 cursor-pointer hover:bg-gray-50 rounded py-0.5;
+}
+
+/* ===== ПАГИНАЦИЯ ===== */
+.pagination-btn {
+  @apply w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm italic transition-all duration-300;
+}
+
+.pagination-btn-active {
+  @apply bg-black text-white;
+}
+
+.pagination-btn-inactive {
+  @apply hover:bg-gray-100;
+}
+
+/* ===== АНИМАЦИИ ===== */
+.fade-enter-active, .fade-leave-active { transition: opacity 0.3s ease, transform 0.3s ease; }
+.fade-enter-from { opacity: 0; transform: translateY(8px); }
+.fade-leave-to { opacity: 0; transform: translateY(-8px); }
+
+.hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.hover-lift:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+
+/* ===== СКРЫТЬ СКРОЛЛБАР ===== */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
