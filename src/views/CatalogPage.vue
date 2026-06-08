@@ -93,9 +93,9 @@
         </div>
 
         <div v-else-if="error" class="text-center py-12">
-          <div class="text-4xl mb-3">⚠️</div>
+          <div class="text-4xl mb-3"></div>
           <p class="italic text-gray-400 text-sm mb-1">Ошибка загрузки</p>
-          <p class="text-[10px] text-gray-300 italic mb-3">Бэкенд: http://localhost:1452</p>
+          <p class="text-[10px] text-gray-300 italic mb-3"></p>
           <button @click="loadProducts" class="btn-primary w-auto px-5 py-2 inline-block">Повторить</button>
         </div>
 

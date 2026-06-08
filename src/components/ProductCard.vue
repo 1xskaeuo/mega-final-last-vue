@@ -11,7 +11,7 @@
       <div v-if="!imageUrl" class="text-4xl text-gray-300">📱</div>
     </div>
     <h3 class="product-card-title text-[11px] sm:text-xs md:text-sm min-h-[1.6rem] md:min-h-[2.2rem] mb-1">{{ name }}</h3>
-    <p class="text-center text-[9px] md:text-xs text-gray-400 italic mb-1">{{ product.brand }} · {{ product.color }}</p>
+    <p class="text-center text-[9px] md:text- xs text-gray-400 italic mb-1">{{ product.brand }} · {{ product.color }}</p>
     <div class="product-card-price text-xs sm:text-sm md:text-base">
       <span v-if="product.discount_price" class="line-through text-gray-400 mr-1 text-[10px] md:text-xs">{{ formatPrice(product.price) }}</span>
       <span class="font-semibold">{{ formatPrice(displayPrice) }}</span>

@@ -1,5 +1,4 @@
 <template>
-  <!-- ===== ГЛАВНЫЙ БАННЕР ===== -->
   <section class="hero-section">
     <div class="max-w-[1400px] mx-auto px-4 md:px-8 py-10 md:py-20 flex flex-col md:flex-row items-center">
       <div class="w-full md:w-1/2 text-center md:text-left mb-6 md:mb-0 relative z-10">
@@ -24,11 +23,9 @@
     </div>
   </section>
 
-  <!-- ===== БЕНТО ГРИД ===== -->
   <section class="w-full px-4 md:px-0 py-5 md:py-16 ">
     <div class="flex flex-col md:grid md:grid-cols-6 md:grid-rows-2 gap-3 md:gap-4 w-full">
 
-      <!-- PS5 -->
       <div class="rounded-2xl md:col-span-4 md:row-span-1 bg-white border border-gray-100 flex flex-col md:flex-row items-center gap-4 md:gap-6 p-5 md:p-8 w-full">
         <div class="flex items-center justify-center md:w-1/2 py-1 md:py-0">
           <img src="/images/ps5.png" alt="PS5" class="w-40 md:w-full max-w-[400px]  object-contain" />
@@ -39,7 +36,6 @@
         </div>
       </div>
 
-      <!-- MacBook Air — текст слева, фото справа -->
       <router-link :to="computersCategoryLink" class="rounded-2xl md:col-span-2 md:row-span-2 bg-[#EFDDD0] flex flex-col md:flex-row-reverse items-center gap-4 md:gap-5 p-5 md:p-8 w-full no-underline text-inherit">
         <div class="flex items-center justify-center md:w-3/5 py-1 md:py-0">
           <img src="/images/macbook.png" alt="MacBook Air" class="w-40 md:w-full max-w-[360px] md:max-h-[400px] object-contain" />
@@ -51,7 +47,6 @@
         </div>
       </router-link>
 
-      <!-- AirPods Max -->
       <div class="rounded-2xl md:col-span-2 md:row-span-1 bg-[#F5F5F7] flex flex-col md:flex-row items-center gap-4 md:gap-5 p-5 md:p-8 w-full">
         <div class="flex items-center justify-center md:w-1/2 py-1 md:py-0">
           <img src="/images/headpones.png" alt="AirPods" class="w-32 md:w-full max-w-[240px] object-contain" />
@@ -62,7 +57,6 @@
         </div>
       </div>
 
-      <!-- Vision Pro -->
       <div class="rounded-2xl md:col-span-2 md:row-span-1 bg-[#2a2a2a] text-white flex flex-col md:flex-row items-center gap-4 md:gap-5 p-5 md:p-8 w-full">
         <div class="flex items-center justify-center md:w-1/2 py-1 md:py-0">
           <img src="/images/visionpro.png" alt="Vision Pro" class="w-32 md:w-full max-w-[240px] object-contain" />
@@ -76,7 +70,6 @@
     </div>
   </section>
 
-  <!-- ===== КАТЕГОРИИ ===== -->
   <section class="max-w-[1400px] mx-auto px-4 md:px-8 py-6 md:py-12">
     <div class="flex items-center justify-between mb-5 md:mb-8">
       <h2 class="text-xl md:text-3xl font-semibold not-italic">Browse By Category</h2>
@@ -98,7 +91,6 @@
     </div>
   </section>
 
-  <!-- ===== ВИТРИНА ТОВАРОВ ===== -->
   <section class="max-w-[1400px] mx-auto px-4 md:px-8 py-6 md:py-12">
     <div class="flex items-center gap-3 md:gap-6 mb-5 md:mb-8 border-b border-gray-200 overflow-x-auto">
       <button v-for="tab in tabs" :key="tab.key" @click="activeTab = tab.key"
@@ -119,16 +111,13 @@
     </div>
   </section>
 
-  <!-- ===== АКЦЕНТНЫЕ БАННЕРЫ ===== -->
   <section class="max-w-[1400px] mx-auto px-4 md:px-8 py-6 md:py-12">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
       <router-link v-for="(b, i) in accentBanners" :key="i" :to="b.link"
         class="rounded-xl md:rounded-2xl p-4 md:p-8 flex flex-col min-h-[220px] md:min-h-[380px] hover-lift overflow-hidden group" :class="b.bg">
-        <!-- Фото сверху -->
         <div class="flex-1 flex items-center justify-center mb-3 md:mb-4">
           <img :src="b.image" :alt="b.title" class="max-h-[100px] md:max-h-[180px] max-w-full object-contain group-hover:scale-110 transition-transform duration-300" />
         </div>
-        <!-- Текст снизу -->
         <div>
           <h3 class="text-sm md:text-xl font-semibold not-italic mb-0.5 md:mb-2" :class="b.textColor">{{ b.title }}</h3>
           <p class="italic text-[10px] md:text-sm mb-2 md:mb-4" :class="b.descColor">{{ b.desc }}</p>
@@ -138,7 +127,6 @@
     </div>
   </section>
 
-  <!-- ===== СКИДКИ ===== -->
   <section v-if="discountedProducts.length > 0" class="max-w-[1400px] mx-auto px-4 md:px-8 py-6 md:py-12">
     <h2 class="text-xl md:text-3xl font-semibold not-italic mb-5 md:mb-8">Скидки до -50%</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6">
@@ -146,7 +134,6 @@
     </div>
   </section>
 
-  <!-- ===== НИЖНИЙ БАННЕР ===== -->
   <section class="bg-[#353535] text-white overflow-hidden">
     <div class="max-w-[1400px] mx-auto px-4 md:px-8 py-12 md:py-24 text-center relative">
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -169,7 +156,7 @@ const products = ref<Product[]>([])
 const categories = ref<Category[]>([])
 const loading = ref(true)
 const activeTab = ref('new')
-/* Hero-фото: положи своё фото в public/images/hero-iphone.png */
+
 const heroImageSrc = '/images/hero-iphone.png'
 const heroImageLoaded = ref(false)
 
@@ -181,7 +168,6 @@ function checkHeroImage() {
 }
 const catScrollRef = ref<HTMLElement | null>(null)
 
-/* Маппинг картинок по ИМЕНИ категории (case-insensitive) */
 function getCategoryImage(cat: Category): string {
   const n = (cat.name || '').toLowerCase()
   if (n.includes('тел') || n.includes('фон') || n.includes('phone') || n.includes('айфон') || n.includes('iphone')) return '/images/cat-phones.png'
@@ -193,7 +179,6 @@ function getCategoryImage(cat: Category): string {
   return '/images/cat-phones.png'
 }
 
-/* Показываем ВСЕ категории из API */
 const displayCategories = computed(() => {
   if (!categories.value.length) return []
   return categories.value.map(cat => ({
@@ -225,7 +210,6 @@ const displayProducts = computed(() => {
 
 const discountedProducts = computed(() => products.value.filter(p => p.discount_price).slice(0, 4))
 
-/* Ссылка на категорию компьютеров для MacBook Air */
 const computersCategoryLink = computed(() => {
   const comp = categories.value.find(c => {
     const n = (c.name || '').toLowerCase()
@@ -238,7 +222,6 @@ function scrollCat(dir: number) {
   catScrollRef.value?.scrollBy({ left: dir * 200, behavior: 'smooth' })
 }
 
-/* Фоллбэк категории если API недоступен */
 const fallbackCategories = [
   { id: 2, name: 'Телефоны' },
   { id: 3, name: 'Компьютеры' },
@@ -251,17 +234,16 @@ onMounted(async () => {
   try {
     const [prods, cats] = await Promise.all([getAllProducts(), getAllCategories()])
     products.value = prods
-    /* Показываем ВСЕ категории из API как есть */
     if (cats && cats.length) {
       categories.value = cats
-      console.log('✅ Категории из API:', JSON.stringify(cats))
+      console.log('Категории из API:', JSON.stringify(cats))
       cats.forEach((c: any) => console.log(`  id=${c.id} name="${c.name}"`))
     } else {
-      console.log('⚠️ API вернул пустые категории, используем фоллбэк')
+      console.log('API вернул пустые категории, используем фоллбэк')
       categories.value = fallbackCategories
     }
   } catch (e) {
-    console.error('❌ Ошибка загрузки:', e)
+    console.error('Ошибка загрузки:', e)
     categories.value = fallbackCategories
   }
   finally { loading.value = false }

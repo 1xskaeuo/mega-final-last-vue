@@ -6,7 +6,6 @@
         <img :src="'/images/logo.png'" alt="Cyber Store" class="h-7 md:h-8 object-contain" />
       </router-link>
 
-      <!-- Search Desktop -->
       <div class="hidden md:flex flex-1 max-w-xl mx-8 relative">
         <div class="relative w-full">
           <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -21,7 +20,6 @@
             @keyup.enter="goToCatalog"
             class="w-full bg-[#F5F5F7] rounded-xl py-3 pl-10 pr-4 text-sm italic outline-none focus:ring-2 focus:ring-gray-200 transition placeholder:not-italic"
           />
-          <!-- Autocomplete Dropdown -->
           <div v-if="showDropdown && localQuery.length >= 1 && searchResults.length > 0"
             class="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 max-h-80 overflow-y-auto z-50">
             <button v-for="p in searchResults.slice(0, 6)" :key="p.id"
@@ -38,27 +36,23 @@
               <span class="text-sm font-semibold italic shrink-0">{{ p.price?.toLocaleString('ru-RU') }} ₽</span>
             </button>
             <button @click="goToCatalog" class="w-full py-3 text-center text-sm italic text-gray-500 hover:bg-gray-50 transition border-t border-gray-100">
-              Show all results →
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Actions -->
       <div class="flex items-center gap-4">
         <button class="md:hidden p-2" @click="showMobileSearch = !showMobileSearch">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
           </svg>
         </button>
-        <!-- Fav icon — NO circle border -->
         <router-link to="/favorites" class="relative p-2 hover:opacity-70 transition">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
           </svg>
           <span v-if="favCount > 0" class="absolute -top-0.5 -right-0.5 bg-black text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center not-italic">{{ favCount }}</span>
         </router-link>
-        <!-- Cart icon — NO circle border -->
         <router-link to="/cart" class="relative p-2 hover:opacity-70 transition">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
@@ -68,11 +62,9 @@
       </div>
     </div>
 
-    <!-- Mobile search -->
     <div v-if="showMobileSearch" class="md:hidden px-4 pb-3 relative">
       <input type="text" placeholder="Search" v-model="localQuery" @input="onSearchInput" @keyup.enter="goToCatalog"
         class="w-full bg-[#F5F5F7] rounded-xl py-3 pl-4 pr-4 text-sm italic outline-none" />
-      <!-- Mobile autocomplete -->
       <div v-if="localQuery.length >= 1 && searchResults.length > 0"
         class="mt-2 bg-white rounded-xl shadow-xl border border-gray-100 max-h-60 overflow-y-auto">
         <button v-for="p in searchResults.slice(0, 4)" :key="p.id" @click="goToProduct(p.id); showMobileSearch = false"
@@ -86,7 +78,7 @@
     </div>
     <div class="h-px bg-gray-200"></div>
   </header>
-  <!-- Click outside to close dropdown -->
+
   <div v-if="showDropdown" class="fixed inset-0 z-40" @click="showDropdown = false"></div>
 </template>
 
